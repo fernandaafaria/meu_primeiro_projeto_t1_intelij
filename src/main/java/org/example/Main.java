@@ -3,14 +3,16 @@ package org.example;
 /*
 Nível 1: Casting implícito e explícito
 
-2. Casting Explícito: Declare uma variável do tipo double com um valor fracionado. Realize o casting explícito para uma variável do tipo int e exiba ambos os valores no console.
+3. Conversão de Tipos (Casting Implícito e Explícito): Declare uma variável do tipo float e atribua um valor fracionado. Em seguida, declare uma variável do tipo long e atribua a ela o valor da variável float usando casting explícito. Por fim, declare uma variável do tipo double e atribua a ela o valor da variável long (casting implícito). Exiba todos os valores no console.
  */
 public class Main {
     public static void main(String[] args) {
-        double valorDouble = 33.7;
-        int valorInt = (int) valorDouble; //casting explícito
-        System.out.println("Valor Double: " + valorDouble);
-        System.out.println("Valor inteiro: " + valorInt);
+        float varF = 2.7f;
+        long varL = (long) varF; //casting explícito
+        double varD = varL; //casting implícito
+        System.out.println("Valor float " + varF);
+        System.out.println("Valor long: " + varL);
+        System.out.println("Valor double: " + varD);
 
 
         }
