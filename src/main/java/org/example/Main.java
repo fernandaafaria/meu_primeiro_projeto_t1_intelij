@@ -3,16 +3,18 @@ package org.example;
 /*
 Nível 1: Casting implícito e explícito
 
-3. Conversão de Tipos (Casting Implícito e Explícito): Declare uma variável do tipo float e atribua um valor fracionado. Em seguida, declare uma variável do tipo long e atribua a ela o valor da variável float usando casting explícito. Por fim, declare uma variável do tipo double e atribua a ela o valor da variável long (casting implícito). Exiba todos os valores no console.
+4. Diferença entre Tipos de Dados: Declare uma variável do tipo short e atribua a ela um valor pequeno. Declare uma variável do tipo int e atribua a ela o valor da variável short (casting implícito). Depois, declare uma variável do tipo byte e atribua a ela o valor da variável short usando casting explícito. Exiba todos os valores no console.
  */
 public class Main {
     public static void main(String[] args) {
-        float varF = 2.7f;
-        long varL = (long) varF; //casting explícito
-        double varD = varL; //casting implícito
-        System.out.println("Valor float " + varF);
-        System.out.println("Valor long: " + varL);
-        System.out.println("Valor double: " + varD);
+        short valorShort = 32;
+        int valorInt = valorShort;
+        byte valorByte = (byte) valorShort;
+
+        System.out.println("Valor short: " + valorShort);
+        System.out.println("Valor int: " + valorInt);
+        System.out.println("Valor byte: " + valorByte);
+
 
 
         }
