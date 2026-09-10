@@ -1,15 +1,15 @@
 package org.example;
 import java.util.Scanner;
-//Nível 3: Processamento e Fórmulas Matemáticas
-//Exercicio 5 - Cálculo de Desconto: Leia o valor de um produto e aplique um desconto fixo de 15%. Exiba o novo valor.
+//Nível 4: Contexto Real e Conversões
+//Exercicio 1 - Conversor de Moeda: Peça um valor em Reais e a cotação atual do Dólar. Exiba o valor convertido em Dólares.
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite o valor do produto:");
-        double prod = entrada.nextDouble();
-        System.out.println("Digite a porcentagem de desconto:");
-        double desc = 0.15;
-        double valorReal = prod - (prod * desc);
-        System.out.println("Preço do produto com desconto:\n" + "R$" + valorReal);
+        System.out.println("Digite o valor em Reais (R$):");
+        double reais = entrada.nextDouble();
+        System.out.println("Digite a cotação atual do Dólar:");
+        double cotacao = entrada.nextDouble();
+        double dolares = reais / cotacao;
+        System.out.println("Valor em Dólares:\n" + "US$ " + dolares);
     }
 }
