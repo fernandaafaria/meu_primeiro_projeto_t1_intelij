@@ -1,15 +1,13 @@
 package org.example;
 import java.util.Scanner;
 //Nível 4: Contexto Real e Conversões
-//Exercicio 3 - Salário Mensal: Solicite o valor da hora trabalhada e o número de horas trabalhadas no mês. Calcule o salário bruto.
+//Exercicio 4 - Área do Círculo: Leia o raio de um círculo e calcule a área. Use Math.PI para o cálculo (A = π * r²).
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite o valor da hora trabalhada:");
-        double valorHora = entrada.nextDouble();
-        System.out.println("Digite o número de horas trabalhadas no mês:");
-        double horas = entrada.nextDouble();
-        double salario = valorHora * horas;
-        System.out.println("Salário bruto mensal:\n" + "R$ " + salario);
+        System.out.println("Digite o valor do raio do círculo:");
+        double raio = entrada.nextDouble();
+        double area = Math.PI * (raio * raio);
+        System.out.println("Área do círculo:\n" + area);
     }
 }
