@@ -1,15 +1,15 @@
 package org.example;
 import java.util.Scanner;
 //Nível 4: Contexto Real e Conversões
-//Exercicio 1 - Conversor de Moeda: Peça um valor em Reais e a cotação atual do Dólar. Exiba o valor convertido em Dólares.
+//Exercicio 2 - Consumo de Combustível: Peça a distância percorrida (km) e o total de combustível gasto (litros). Calcule o consumo médio (km/l).
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite o valor em Reais (R$):");
-        double reais = entrada.nextDouble();
-        System.out.println("Digite a cotação atual do Dólar:");
-        double cotacao = entrada.nextDouble();
-        double dolares = reais / cotacao;
-        System.out.println("Valor em Dólares:\n" + "US$ " + dolares);
+        System.out.println("Digite a distância percorrida em km:");
+        double dist = entrada.nextDouble();
+        System.out.println("Digite o total de combustível gasto em litros:");
+        double litros = entrada.nextDouble();
+        double consumo = dist / litros;
+        System.out.println("Consumo médio:\n" + consumo + " km/l");
     }
 }
