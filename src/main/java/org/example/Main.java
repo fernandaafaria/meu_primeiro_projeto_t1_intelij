@@ -2,7 +2,7 @@ package org.example;
 import java.util.Scanner;
 
 // Exercicios de estrutura de decisão
-// Questão 1-Verificar Maioridade
+// Questão 1-Verificar Maioridadw
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
