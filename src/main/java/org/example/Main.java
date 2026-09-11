@@ -1,7 +1,7 @@
 package org.example;
 
 //Estrtura de repetição
-// Exercício 3 - Soma de Vendas do Dia
+// Exercício 3 - Soma de Vendas do Diaa
 import java.util.Scanner;
 
 public class Main {
