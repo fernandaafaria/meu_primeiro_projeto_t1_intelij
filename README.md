@@ -2,11 +2,11 @@
 
 Lista de exercícios desenvolvida em Java durante o curso de Desenvolvimento de Sistemas – Jovem Aprendiz Metrô, no SENAI.
 
-🛠️ Tecnologias
+**Tecnologias**
 - Java
 - IntelliJ IDEA
 
-📚 Conteúdos
+**Conteúdos**
 - Lógica de programação
 - Variáveis e tipos de dados
 - Estruturas condicionais
