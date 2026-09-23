@@ -5,11 +5,11 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        char[] sigla = new char[3];
-        sigla[0] = 'A';
-        sigla[1] = 'B';
-        sigla[2] = 'C';
-        System.out.println(sigla[2]);
+        String[] nomes = new String[3];
+        nomes[0] = "Ana";
+        nomes[1] = "Maria";
+        nomes[2] = "Joana";
+        System.out.println(nomes[0]);
 
         }
 
