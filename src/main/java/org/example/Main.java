@@ -1,35 +1,27 @@
 package org.example;
 import java.util.Scanner;
 
-//FUNDAMENTOS DE JAVA: EXERCÍCIOS: VETORES
-//Exercício 5: Vetor de Strings
+//FUNDAMENTOS DE JAVA: EXERCÍCIOS: MATRIZES
+//Exercício 6: Preenchendo uma Matriz
 
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        String[] nomes = new String[3];
+        int[][] matriz = new int[2][2];
 
-        for (int i = 0; i < nomes.length; i++) {
-            System.out.print("Digite o " + (i + 1) + "º nome: ");
-            nomes[i] = entrada.nextLine();
-        }
-
-        System.out.print("\nDigite um nome para verificar se está no vetor: ");
-        String nomeBuscado = entrada.nextLine();
-
-        boolean encontrado = false;
-        for (int i = 0; i < nomes.length; i++) {
-            if (nomes[i].equalsIgnoreCase(nomeBuscado)) {
-                encontrado = true;
-                break;
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print("Digite o valor para a posição [" + i + "][" + j + "]: ");
+                matriz[i][j] = entrada.nextInt();
             }
         }
-        if (encontrado) {
-            System.out.println("O nome \"" + nomeBuscado + "\" está presente no vetor!");
-        } else {
-            System.out.println("O nome \"" + nomeBuscado + "\" não foi encontrado no vetor.");
+        System.out.println("\nValores inseridos na matriz:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(matriz[i][j] + "\t");
+            }
+            System.out.println();
         }
-
 
 
 
