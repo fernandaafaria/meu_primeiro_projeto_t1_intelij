@@ -2,29 +2,22 @@ package org.example;
 import java.util.Scanner;
 
 //FUNDAMENTOS DE JAVA: EXERCÍCIOS: MATRIZES
-//Exercício 6: Preenchendo uma Matriz
+//Exercício 7: Soma de Valores em uma Matriz
 
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        int[][] matriz = new int[2][2];
+        int[][] matriz = new int[3][3];
+        int somaTotal = 0;
 
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 System.out.print("Digite o valor para a posição [" + i + "][" + j + "]: ");
                 matriz[i][j] = entrada.nextInt();
+                somaTotal += matriz[i][j];
             }
         }
-        System.out.println("\nValores inseridos na matriz:");
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                System.out.print(matriz[i][j] + "\t");
-            }
-            System.out.println();
-        }
-
-
-
+        System.out.println("\nA soma de todos os elementos da matriz é: " + somaTotal);
 
     }
 }
