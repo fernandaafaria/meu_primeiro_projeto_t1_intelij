@@ -2,21 +2,35 @@ package org.example;
 import java.util.Scanner;
 
 //FUNDAMENTOS DE JAVA: EXERCÍCIOS: VETORES
-//Exercício 4: Média de Notas (double)
+//Exercício 5: Vetor de Strings
 
 public class Main {
     public static void main(String[] args) {
-      Scanner entrada = new Scanner(System.in);
-      double media = 0.0;
-      double[] notas = new double[4];
+        Scanner entrada = new Scanner(System.in);
+        String[] nomes = new String[3];
 
-      for(int i =0; i < notas.length; i++){
-          System.out.println("Digite a nota [" + i + "] :");
-          notas[i] = entrada.nextDouble();
-          media += notas[i];
-      }
-        media = media / notas.length;
-        System.out.printf("%nMédia das notas: %.2f%n", media);
+        for (int i = 0; i < nomes.length; i++) {
+            System.out.print("Digite o " + (i + 1) + "º nome: ");
+            nomes[i] = entrada.nextLine();
+        }
+
+        System.out.print("\nDigite um nome para verificar se está no vetor: ");
+        String nomeBuscado = entrada.nextLine();
+
+        boolean encontrado = false;
+        for (int i = 0; i < nomes.length; i++) {
+            if (nomes[i].equalsIgnoreCase(nomeBuscado)) {
+                encontrado = true;
+                break;
+            }
+        }
+        if (encontrado) {
+            System.out.println("O nome \"" + nomeBuscado + "\" está presente no vetor!");
+        } else {
+            System.out.println("O nome \"" + nomeBuscado + "\" não foi encontrado no vetor.");
+        }
+
+
 
 
 
