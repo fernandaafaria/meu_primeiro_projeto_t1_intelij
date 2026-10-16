@@ -2,24 +2,22 @@ package org.example;
 import java.util.Scanner;
 
 //Lista de Exercicios sobre FUNÇÕES
-//Exercício 5: Função para Calcular a Média de Três Notas
+//Exercício 6: Função para Verificar se um Número é Par
 
 public class Main {
-    public static double calcularMedia(double n1, double n2, double n3) {
-        return (n1 + n2 + n3) / 3;
+    public static boolean verificarPar(int num) {
+        return num % 2 == 0;
     }
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite a primeira nota: ");
-        double n1 = entrada.nextDouble();
-        System.out.println("Digite a segunda nota: ");
-        double n2 = entrada.nextDouble();
-        System.out.println("Digite a terceira nota: ");
-        double n3 = entrada.nextDouble();
+        System.out.println("Digite o valor: ");
+        int num = entrada.nextInt();
 
-        double media = calcularMedia(n1, n2, n3);
-        System.out.println("A média é: " + media);
-
+        if (verificarPar(num)){
+            System.out.println("True, " + num + " é par!");
+        } else {
+            System.out.println("False, " + num + " é ímpar!");
+        }
     }
 }
