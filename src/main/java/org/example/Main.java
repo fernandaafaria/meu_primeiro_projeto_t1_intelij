@@ -1,21 +1,34 @@
-package org.example;
-import java.util.Scanner;
+package com.example;
+import java.io.FileWriter;
+import java.io.IOException;
+import  java.util.Scanner;
+import java.io.File;
 
-//Lista de Exercicios sobre FUNÇÕES
-//Exercício 10: Função para Calcular o IMC
 
 public class Main {
-    public static double calcularIMC(double peso, double altura) {
-        return peso / (altura * altura);
-    }
+    public static void main(String[] args) throws IOException {
 
-    public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite o seu peso: ");
-        double peso = entrada.nextDouble();
-        System.out.println("Digite a sua altura: ");
-        double altura = entrada.nextDouble();
-        double imc = calcularIMC(peso, altura);
-        System.out.printf("O seu IMC é: %.2f\n", imc);
+        Scanner sc = new Scanner(System.in);
+
+        File arquivo = new File ("exemplo.txt");
+
+        try
+        {
+            if (arquivo.exists()) {
+                System.out.println("O arquivo já existe. ");
+            } else {
+                if (arquivo.createNewFile()) {
+                    System.out.println("Arquivo criado com sucesso: " + arquivo.getName());
+                } else {
+                    System.out.println("Falha ao criar arquivo. ");
+                }
+            }
+        } catch (IOException e)
+        {
+            System.out.println("Falha ao manipular o arquivo.");
+        }
+        FileWriter eulirico = new FileWriter("exemplo.txt", true);
+        eulirico.write("OI");
+        eulirico.close();
     }
 }
