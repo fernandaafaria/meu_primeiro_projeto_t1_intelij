@@ -2,28 +2,23 @@ package org.example;
 import java.util.Scanner;
 
 //Lista de Exercicios sobre FUNÇÕES
-//Exercício 7: Função para Determinar o Maior de Três Números
+//Exercício 8: Função que Calcula o Fatorial de um Número
 
 public class Main {
-    public static int maiornumero(int num1, int num2, int num3) {
-        if (num2 >= num1 && num2 >= num3) {
-            return num2;
-        } else if (num1 >= num2 && num1 >= num3) {
-            return num1;
-        } else {
-            return num3;
+    public static int calcularFatorial(int num) {
+        int resultado = 1;
+        for (int i = 1; i <= num; i++) {
+            resultado = resultado * i;
         }
+        return resultado;
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Digite o valor 1: ");
-        int num1 = sc.nextInt();
-        System.out.println("Digite o valor 2: ");
-        int num2 = sc.nextInt();
-        System.out.println("Digite o valor 3: ");
-        int num3 = sc.nextInt();
-        int maior = maiornumero(num1, num2, num3);
-        System.out.print("O maior numero é: " + maior);
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Digite um número: ");
+        int num = entrada.nextInt();
+        int fatorial = calcularFatorial(num);
+        System.out.println("O fatorial é: " + fatorial);
+
     }
 }
