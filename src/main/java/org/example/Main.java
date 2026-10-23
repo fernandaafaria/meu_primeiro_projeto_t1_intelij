@@ -2,22 +2,28 @@ package org.example;
 import java.util.Scanner;
 
 //Lista de Exercicios sobre FUNÇÕES
-//Exercício 6: Função para Verificar se um Número é Par
+//Exercício 7: Função para Determinar o Maior de Três Números
 
 public class Main {
-    public static boolean verificarPar(int num) {
-        return num % 2 == 0;
+    public static int maiornumero(int num1, int num2, int num3) {
+        if (num2 >= num1 && num2 >= num3) {
+            return num2;
+        } else if (num1 >= num2 && num1 >= num3) {
+            return num1;
+        } else {
+            return num3;
+        }
     }
 
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite o valor: ");
-        int num = entrada.nextInt();
-
-        if (verificarPar(num)){
-            System.out.println("True, " + num + " é par!");
-        } else {
-            System.out.println("False, " + num + " é ímpar!");
-        }
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o valor 1: ");
+        int num1 = sc.nextInt();
+        System.out.println("Digite o valor 2: ");
+        int num2 = sc.nextInt();
+        System.out.println("Digite o valor 3: ");
+        int num3 = sc.nextInt();
+        int maior = maiornumero(num1, num2, num3);
+        System.out.print("O maior numero é: " + maior);
     }
 }
