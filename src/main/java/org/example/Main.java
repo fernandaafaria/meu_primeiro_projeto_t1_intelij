@@ -1,34 +1,31 @@
-package com.example;
-import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import  java.util.Scanner;
-import java.io.File;
+import java.util.Scanner;
 
-
+//Leitura de Arquivos Classes Buffers
 public class Main {
     public static void main(String[] args) throws IOException {
+        String arquivo = "/C://Users//Downloads//ativos.csv/";
 
-        Scanner sc = new Scanner(System.in);
+        BufferedReader leitor = new BufferedReader(new FileReader(arquivo));
 
-        File arquivo = new File ("exemplo.txt");
-
-        try
-        {
-            if (arquivo.exists()) {
-                System.out.println("O arquivo já existe. ");
-            } else {
-                if (arquivo.createNewFile()) {
-                    System.out.println("Arquivo criado com sucesso: " + arquivo.getName());
-                } else {
-                    System.out.println("Falha ao criar arquivo. ");
-                }
+        String linha;
+        while (true){
+            try {
+                if (!((linha = leitor.readLine()) != null)) break;
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-        } catch (IOException e)
-        {
-            System.out.println("Falha ao manipular o arquivo.");
+            String[] dado = linha.split(",");
+            String hosts = dado[0];
+            String ips = dado[1];
+            String so = dado[2];
+
+            System.out.println("Host: "+ hosts);
+            System.out.println("IPS: "+ ips);
+            System.out.println("SO: "+ so);
         }
-        FileWriter eulirico = new FileWriter("exemplo.txt", true);
-        eulirico.write("OI");
-        eulirico.close();
+
     }
 }
