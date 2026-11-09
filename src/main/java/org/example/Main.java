@@ -1,48 +1,42 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
-//Leitura de Arquivos Classes Buffers
-//Desafio Final - Relatório de Ativos
+//Escrita de Arquivos em JAVA
+//Desafio 1 - Adicionar coluna Status
 public class Main {
     public static void main(String[] args) throws IOException {
-        String arquivo = "C:\\Users\\Downloads\\ativos.csv";
-        int totalAtivos = 0;
-        int linux = 0;
-        int windows = 0;
-        int firewall = 0;
-        int outros = 0;
+        try {
+            BufferedReader leitor = new BufferedReader(new FileReader("/C://Users//54727159899//Downloads//ativos.csv/"));
+            BufferedWriter escritor = new BufferedWriter(new FileWriter("inventario_atualizado.csv"));
 
-        try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
-            String linha;
+            String linha = leitor.readLine();
+            escritor.write(linha + ", status");
+            escritor.newLine();
+
             while ((linha = leitor.readLine()) != null) {
                 String[] dados = linha.split(",");
+                String host = dados[0];
+                String ip = dados[1];
+                String so = dados[2];
 
-                if (dados.length >= 3) {
-                    totalAtivos++;
-                    String sistema = dados[2].trim();
-                    if (sistema.equalsIgnoreCase("Linux")) {
-                        linux++;
-                    } else if (sistema.equalsIgnoreCase("Windows")) {
-                        windows++;
-                    } else if (sistema.equalsIgnoreCase("Firewall")) {
-                        firewall++;
-                    } else {
-                        outros++;
-                    }
+                String status;
+                if (so.toLowerCase().contains("windows")) {
+                    status = "Online";
+                } else if (so.toLowerCase().contains("linux") || so.contains("Ubuntu") || so.contains("Debian") || so.contains("Rocky") || so.contains("Kali")) { //[cite: 15, 19]
+                    status = "Em Monitoramento";
+                } else {
+                    status = "Desconhecido";
                 }
+
+                escritor.write(host + "," + ip + "," + so + "," + status);
+                escritor.newLine();
             }
-            System.out.println("      RELATÓRIO DE ATIVOS        ");
-            System.out.println("Total de Ativos: " + totalAtivos);
-            System.out.println("Linux:    " + linux);
-            System.out.println("Windows:  " + windows);
-            System.out.println("Firewall: " + firewall);
-            if (outros > 0) {
-                System.out.println("Outros:   " + outros);
-            }
+
+            leitor.close();
+            escritor.close();
+            System.out.println("Relatorio gerado com sucesso!");
         } catch (IOException e) {
-            System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+            System.out.println("Erro: " + e.getMessage());
         }
     }
 }
